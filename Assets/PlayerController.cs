@@ -15,12 +15,18 @@ public class PlayerController : MonoBehaviour
     SpriteRenderer sr; 
     Animator animator; 
 
+    public Transform torchTransform;
+    bool torchOn;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();  
         animator = GetComponent<Animator>(); 
+
+        //Torch
+        torchOn = true;
+        torchTransform = transform.Find("Torch_DirectionalLight").transform;
     }
 
     void Update() {
@@ -35,6 +41,10 @@ public class PlayerController : MonoBehaviour
             animator.SetFloat("lastMoveY", Input.GetAxisRaw("Vertical")); 
         }
 
+        //Update Torch Transform
+        if(torchOn){
+            TorchPositionController(torchTransform);
+        }
     }
 
     void FixedUpdate() {
@@ -75,5 +85,24 @@ public class PlayerController : MonoBehaviour
 
     void OnMove(InputValue movementValue) {
         movementInput = movementValue.Get<Vector2>(); 
+    }
+
+    void TorchPositionController(Transform torchTransform){
+
+        //Rotate
+        float angle = torchTransform.rotation.eulerAngles.z;
+        if (Input.GetKeyDown("left"))
+        {
+            angle = 90.0f;
+        }else if (Input.GetKeyDown("up")){
+            angle = 0.0f;
+        }else if (Input.GetKeyDown("right")){
+            angle = 270f;
+        }else if (Input.GetKeyDown("down")){
+            angle = 180.0f;
+        }
+
+        torchTransform.rotation = Quaternion.Euler(0.0f, 0.0f, angle);
+
     }
 }
