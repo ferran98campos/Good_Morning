@@ -1242,7 +1242,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7
 --- !u!1 &570851945
 GameObject:
   m_ObjectHideFlags: 0
@@ -2925,7 +2925,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7
 --- !u!19719996 &1764497220
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -3076,7 +3076,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7
 --- !u!19719996 &1913121025
 TilemapCollider2D:
   m_ObjectHideFlags: 0

@@ -698,7 +698,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7
 --- !u!19719996 &239372955
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -3331,7 +3331,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7
 --- !u!483693784 &388835917
 TilemapRenderer:
   m_ObjectHideFlags: 0
@@ -5578,6 +5578,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 9cff46e256723485eb0dc41ca82c4369, type: 3}
+    - target: {fileID: 1359964358040318065, guid: afc886d19c0437144bfec21cc23e876e, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1359964358040318065, guid: afc886d19c0437144bfec21cc23e876e, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
@@ -10359,7 +10363,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7
 --- !u!19719996 &1537454993
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -11278,7 +11282,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1759861517}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
   m_Name: 
@@ -11312,7 +11316,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1759861517}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6a160d838ff8b4b4693ac20007e008c7, type: 3}
   m_Name: 
@@ -11360,7 +11364,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 2.4026911
+  orthographic size: 7.740458
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
