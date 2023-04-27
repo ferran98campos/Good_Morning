@@ -2,7 +2,9 @@
 
 The attempt is here: https://github.com/KarlFran66/Throwing-Stone.git.
 
-**Now the attempt can simulate the player taken by the water stream to somewhere. This is in done the Water Stream scene.**
+**4.27 Now the attempt realizes a simple function of chasen by an NPC in the maze.**
+
+**4.27 Now the attempt can simulate the player taken by the water stream to somewhere. This is in done the Water Stream scene.**
 
 Gameobject Rock has the component of Rigidbody 2D so that it can be picked up and thrown away. It has a Rock Instruction component with the script realizing the function that when the player walks nearby the rock, there will be a pop-up instruction saying "Press E to pick up the rock".
 
