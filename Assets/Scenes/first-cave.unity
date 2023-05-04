@@ -5745,7 +5745,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1332874260391676120, guid: afc886d19c0437144bfec21cc23e876e, type: 3}
       propertyPath: FootStepDelay
-      value: 0.5
+      value: 0.35
       objectReference: {fileID: 0}
     - target: {fileID: 1332874260391676120, guid: afc886d19c0437144bfec21cc23e876e, type: 3}
       propertyPath: movementSpeed
