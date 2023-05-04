@@ -1,0 +1,52 @@
+body {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10%;
+  margin-right: 10%;
+  background-image: url(/Assets/cave\ sprites/cave-floor.png);
+  background-repeat: repeat;
+  font-family: Arial, Helvetica, sans-serif;
+  color: aliceblue;
+}
+.greeting{
+    color: #9a3039;
+    font-weight: 700;
+}
+.menu {
+  display: flex;
+  flex-direction: row;
+}
+.icons {
+  height: 15vh;
+  width: 15vh;
+  border-radius: 250px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin: auto;
+}
+#carter {
+  background-image: url(/developers/carter.png);
+}
+
+#ferran {
+  background-image: url(developers/ferran.jpg);
+}
+
+#karl {
+  background-image: url(developers/karl.png);
+}
+
+#malin {
+  background-image: url(developers/malin.jpg);
+}
+
+#tim {
+  background-image: url(developers/tim.png);
+}
+
+.intro-text{
+    background-color: #46788e;
+    border-radius: 25px;
+    padding: 2%;
+    margin-top: 5%;
+}
