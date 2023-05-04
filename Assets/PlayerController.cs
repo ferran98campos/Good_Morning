@@ -14,13 +14,17 @@ public class PlayerController : MonoBehaviour
 
     SpriteRenderer sr; 
     Animator animator; 
+    SoundEffects sfx; 
+    public float FootStepDelay = 0;
+    
 
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();  
-        animator = GetComponent<Animator>(); 
+        animator = GetComponent<Animator>();
+        sfx = GetComponent<SoundEffects>(); 
     }
 
     void Update() {
@@ -65,6 +69,9 @@ public class PlayerController : MonoBehaviour
         if(count == 0) {
             //Ray does not collide
             rb.MovePosition(rb.position + direction * movementSpeed * Time.fixedDeltaTime);
+            //Play footstep 
+            if(!sfx.IsRunning()) 
+                StartCoroutine(sfx.PlayFootStep(FootStepDelay));
             return true;  
         } else {
             return false; 
