@@ -4,9 +4,12 @@
     <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
   <body>
-    <h1><img src="Assets/cave sprites/logo-export.png" class="title"/></h1>
+    <h1><img src="Assets/cave sprites/logo-export.png" id="title"/></h1>
     <div class="greeting">
-      Good morning! Welcome to the home page of Good Morning the video game!
+        Welcome to the home page of Good Morning the video game!
+    </div>
+    <div class="intro-text" style="text-align:center;">
+      <a class="greeting download" href="https://github.com/ferran98campos/Good_Morning">Download the demo!</a>
     </div>
     <div class="devblogs">
       Meet the team!
@@ -33,5 +36,19 @@
       placerat, lacus vitae blandit maximus, nisi erat ullamcorper enim,
       tristique pellentesque tellus tortor sed nunc.
     </div>
+
   </div>
+  <script>
+    // When the user scrolls down 50px from the top of the document, resize the header's font size
+    window.onscroll = function() {scrollFunction()};
+    
+    function scrollFunction() {
+      if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+        document.getElementById("title").style.height = "20vh";
+      } else {
+        document.getElementById("title").style.height = "10vh";
+      }
+    }
+    </script>
+</body>
 </html>
