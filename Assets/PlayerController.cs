@@ -14,6 +14,9 @@ public class PlayerController : MonoBehaviour
 
     SpriteRenderer sr; 
     Animator animator; 
+    SoundEffects sfx; 
+    public float FootStepDelay = 0;
+    
 
     public Transform torchTransform;
     bool torchOn;
@@ -22,6 +25,8 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();  
+        animator = GetComponent<Animator>();
+        sfx = GetComponent<SoundEffects>(); 
         animator = GetComponent<Animator>(); 
 
         //Torch
@@ -75,6 +80,9 @@ public class PlayerController : MonoBehaviour
         if(count == 0) {
             //Ray does not collide
             rb.MovePosition(rb.position + direction * movementSpeed * Time.fixedDeltaTime);
+            //Play footstep 
+            if(!sfx.IsRunning()) 
+                StartCoroutine(sfx.PlayFootStep(FootStepDelay));
             return true;  
         } else {
             return false; 
