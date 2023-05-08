@@ -54,6 +54,11 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate() {
 
+        // If no key is pressed, remain in current position.
+        if(movementInput == Vector2.zero) {
+            rb.MovePosition(rb.position + movementInput * movementSpeed * Time.fixedDeltaTime);
+        }
+
         if(movementInput != Vector2.zero) {
             bool success = TryMove(movementInput);
 
