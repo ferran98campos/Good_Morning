@@ -11,12 +11,11 @@ public class SoundEffects : MonoBehaviour
     
     void Start()
     {
-        
+        sfx.volume = 0.3f;
     }
 
     public IEnumerator PlayFootStep(float WaitTime) {
-        running = true;
-        sfx.volume = 0.6f; 
+        running = true; 
         sfx.clip = FootStep;
         sfx.Play(); 
         yield return new WaitForSeconds(WaitTime);
