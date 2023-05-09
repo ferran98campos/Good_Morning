@@ -38,7 +38,7 @@ public class ObjectController : MonoBehaviour
 
     void PickUpItem()
     {
-        Collider2D pickUpItem = Physics2D.OverlapCircle(transform.position + Direction, .8f, pickUpMask);
+        Collider2D pickUpItem = Physics2D.OverlapCircle(transform.position + Direction, .4f, pickUpMask);
         if (pickUpItem)
         {   
             itemHolding = pickUpItem.gameObject;
@@ -49,12 +49,14 @@ public class ObjectController : MonoBehaviour
             {
                 itemHolding.GetComponent<Rigidbody2D>().simulated = false;
             }
+            itemHolding.GetComponent<SpriteRenderer>().sortingOrder = 1; 
         }
     }
 
     void DropItem() {
         itemHolding.transform.position = transform.position + Direction;
         itemHolding.transform.parent = null;
+        itemHolding.GetComponent<SpriteRenderer>().sortingOrder = -1; 
         
         if (itemHolding.GetComponent<Rigidbody2D>()) {
             itemHolding.GetComponent<Rigidbody2D>().simulated = true;
