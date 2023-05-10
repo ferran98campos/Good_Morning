@@ -6651,11 +6651,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 15.158355, y: 3.557558}
   m_EdgeRadius: 0
---- !u!1 &641569815 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1359964358040318071, guid: afc886d19c0437144bfec21cc23e876e, type: 3}
-  m_PrefabInstance: {fileID: 804283815}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &780368263
 GameObject:
   m_ObjectHideFlags: 0
@@ -6854,6 +6849,10 @@ PrefabInstance:
       propertyPath: sfx
       value: 
       objectReference: {fileID: 1976823257}
+    - target: {fileID: 4164085183786617568, guid: afc886d19c0437144bfec21cc23e876e, type: 3}
+      propertyPath: holdRock
+      value: 
+      objectReference: {fileID: 1056838350}
     - target: {fileID: 5155665467133693915, guid: afc886d19c0437144bfec21cc23e876e, type: 3}
       propertyPath: m_Actions
       value: 
@@ -14185,6 +14184,23 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &1824919215 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1150578690277472557, guid: 12ce89db879d79d4b9779f82d0869d17, type: 3}
+  m_PrefabInstance: {fileID: 8405370677335919521}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1824919220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1824919215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40b7cc807db225747b1f84a018257c15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1838863975
 GameObject:
   m_ObjectHideFlags: 0
@@ -23030,26 +23046,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1359964358040318064, guid: afc886d19c0437144bfec21cc23e876e, type: 3}
   m_PrefabInstance: {fileID: 804283815}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1917304181
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 641569815}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3976eb850612d749afc0a6268e43b0b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  holdRock: {fileID: 1056838350}
-  pickUpMask:
-    serializedVersion: 2
-    m_Bits: 72
-  pickupKey: 101
-  throwKey: 32
-  throwForce: 10
-  maxThrowDuration: 1
 --- !u!1 &1976823256
 GameObject:
   m_ObjectHideFlags: 0
@@ -23454,7 +23450,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7052945338131341878, guid: 0912d6bea07a53340bdcee94343c15a7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.096
+      value: 0.11
       objectReference: {fileID: 0}
     - target: {fileID: 7052945338131341878, guid: 0912d6bea07a53340bdcee94343c15a7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -23563,19 +23559,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5696359619675059401, guid: 12ce89db879d79d4b9779f82d0869d17, type: 3}
       propertyPath: m_Size.x
-      value: 0.7025995
+      value: 0.650435
       objectReference: {fileID: 0}
     - target: {fileID: 5696359619675059401, guid: 12ce89db879d79d4b9779f82d0869d17, type: 3}
       propertyPath: m_Size.y
-      value: 0.6017599
+      value: 0.52525043
       objectReference: {fileID: 0}
     - target: {fileID: 5696359619675059401, guid: 12ce89db879d79d4b9779f82d0869d17, type: 3}
       propertyPath: m_Offset.x
-      value: 0.021407604
+      value: 0.030101776
       objectReference: {fileID: 0}
     - target: {fileID: 5696359619675059401, guid: 12ce89db879d79d4b9779f82d0869d17, type: 3}
       propertyPath: m_Offset.y
-      value: -0.02093935
+      value: -0.013984203
       objectReference: {fileID: 0}
     - target: {fileID: 6837073085715761552, guid: 12ce89db879d79d4b9779f82d0869d17, type: 3}
       propertyPath: m_Constraints

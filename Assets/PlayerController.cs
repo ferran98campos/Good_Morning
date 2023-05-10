@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
 
         //Torch
         torchOn = true;
-        // torchTransform = transform.Find("Torch_DirectionalLight").transform;
+        torchTransform = transform.Find("Torch_DirectionalLight").transform;
 
     }
 
