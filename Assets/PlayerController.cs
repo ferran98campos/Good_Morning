@@ -16,10 +16,13 @@ public class PlayerController : MonoBehaviour
     Animator animator; 
     SoundEffects sfx; 
     public float FootStepDelay = 0;
+    private ObjectController objectController; 
     
 
     public Transform torchTransform;
     bool torchOn;
+
+    
 
     void Start()
     {
@@ -28,10 +31,12 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         sfx = GetComponent<SoundEffects>(); 
         animator = GetComponent<Animator>(); 
+        objectController = GetComponent<ObjectController>(); 
 
         //Torch
         torchOn = true;
         torchTransform = transform.Find("Torch_DirectionalLight").transform;
+
     }
 
     void Update() {
@@ -39,6 +44,9 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("Horizontal", movementInput.x);
         animator.SetFloat("Vertical", movementInput.y);
         animator.SetFloat("Speed", movementInput.sqrMagnitude);
+        if(movementInput.sqrMagnitude > .1f) {
+            objectController.Direction = movementInput.normalized; 
+        }
 
         //Naive way of making sure that player faces the same direction when going idle
         if(Input.GetAxisRaw("Horizontal") == 1 || Input.GetAxisRaw("Horizontal") == -1 || Input.GetAxisRaw("Vertical") == 1 || Input.GetAxisRaw("Vertical") == -1) {

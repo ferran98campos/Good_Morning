@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 5155665467133693915}
   - component: {fileID: 1332874260391676120}
   - component: {fileID: 1802022740900627988}
+  - component: {fileID: 4164085183786617568}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -232,3 +233,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sfx: {fileID: 0}
   FootStep: {fileID: 8300000, guid: 7a737946c693d5c41a4f89d9fb27938d, type: 3}
+--- !u!114 &4164085183786617568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1359964358040318071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3976eb850612d749afc0a6268e43b0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  holdRock: {fileID: 0}
+  pickUpMask:
+    serializedVersion: 2
+    m_Bits: 72
+  pickupKey: 101
+  throwKey: 32
+  throwForce: 4
+  maxThrowDuration: 1

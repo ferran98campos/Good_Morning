@@ -18,7 +18,6 @@ public class ObjectController : MonoBehaviour
     {
         if (Input.GetKeyDown(pickupKey)) {
             if (itemHolding) {
-                //Drop the item
                 DropItem();
             } else {
                 PickUpItem();
@@ -27,6 +26,7 @@ public class ObjectController : MonoBehaviour
 
         if (Input.GetKey(throwKey) && itemHolding) {
             throwDuration += Time.deltaTime;
+            Debug.Log(throwDuration);
             throwDuration = Mathf.Clamp(throwDuration, 0f, maxThrowDuration);
         }
 
@@ -38,7 +38,7 @@ public class ObjectController : MonoBehaviour
 
     void PickUpItem()
     {
-        Collider2D pickUpItem = Physics2D.OverlapCircle(transform.position + Direction, .8f, pickUpMask);
+        Collider2D pickUpItem = Physics2D.OverlapCircle(transform.position + Direction, .2f, pickUpMask);
         if (pickUpItem)
         {   
             itemHolding = pickUpItem.gameObject;
@@ -49,12 +49,14 @@ public class ObjectController : MonoBehaviour
             {
                 itemHolding.GetComponent<Rigidbody2D>().simulated = false;
             }
+            itemHolding.GetComponent<SpriteRenderer>().sortingOrder = 1; 
         }
     }
 
     void DropItem() {
-        itemHolding.transform.position = transform.position + Direction;
+        itemHolding.transform.position = transform.position + Direction * 0.3f;
         itemHolding.transform.parent = null;
+        itemHolding.GetComponent<SpriteRenderer>().sortingOrder = -1; 
         
         if (itemHolding.GetComponent<Rigidbody2D>()) {
             itemHolding.GetComponent<Rigidbody2D>().simulated = true;
@@ -64,17 +66,22 @@ public class ObjectController : MonoBehaviour
 
     IEnumerator ThrowItem(GameObject item) {
         Vector3 startPoint = item.transform.position;
+        //Setting the minimum throw-distance
+        if(throwDuration < 0.2F) throwDuration = 0.2F;
         Vector3 endPoint = transform.position + Direction * throwForce * throwDuration; 
         item.transform.parent = null; 
 
         for (int i = 0; i < 25; i++) {
             item.transform.position = Vector3.Lerp(startPoint, endPoint, i* .04f);
-            yield return new WaitForSeconds(throwDuration * 0.005F); 
+            //Adjust this for animation duration
+            yield return new WaitForSeconds(throwDuration * 0.02F); 
         }
         
         if (item.GetComponent<Rigidbody2D>()) {
             item.GetComponent<Rigidbody2D>().simulated = true; 
         }
         throwDuration = 0; 
+        item.GetComponent<SpriteRenderer>().sortingOrder = -1; 
+        yield return null; 
     }
 }
