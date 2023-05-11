@@ -14,13 +14,29 @@ public class PlayerController : MonoBehaviour
 
     SpriteRenderer sr; 
     Animator animator; 
+    SoundEffects sfx; 
+    public float FootStepDelay = 0;
+    private ObjectController objectController; 
+    
 
+    public Transform torchTransform;
+    bool torchOn;
+
+    
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();  
+        animator = GetComponent<Animator>();
+        sfx = GetComponent<SoundEffects>(); 
         animator = GetComponent<Animator>(); 
+        objectController = GetComponent<ObjectController>(); 
+
+        //Torch
+        torchOn = true;
+        torchTransform = transform.Find("Torch_DirectionalLight").transform;
+
     }
 
     void Update() {
@@ -28,6 +44,9 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("Horizontal", movementInput.x);
         animator.SetFloat("Vertical", movementInput.y);
         animator.SetFloat("Speed", movementInput.sqrMagnitude);
+        if(movementInput.sqrMagnitude > .1f) {
+            objectController.Direction = movementInput.normalized; 
+        }
 
         //Naive way of making sure that player faces the same direction when going idle
         if(Input.GetAxisRaw("Horizontal") == 1 || Input.GetAxisRaw("Horizontal") == -1 || Input.GetAxisRaw("Vertical") == 1 || Input.GetAxisRaw("Vertical") == -1) {
@@ -35,9 +54,18 @@ public class PlayerController : MonoBehaviour
             animator.SetFloat("lastMoveY", Input.GetAxisRaw("Vertical")); 
         }
 
+        //Update Torch Transform
+        if(torchOn){
+            TorchPositionController(torchTransform);
+        }
     }
 
     void FixedUpdate() {
+
+        // If no key is pressed, remain in current position.
+        if(movementInput == Vector2.zero) {
+            rb.MovePosition(rb.position + movementInput * movementSpeed * Time.fixedDeltaTime);
+        }
 
         if(movementInput != Vector2.zero) {
             bool success = TryMove(movementInput);
@@ -65,6 +93,9 @@ public class PlayerController : MonoBehaviour
         if(count == 0) {
             //Ray does not collide
             rb.MovePosition(rb.position + direction * movementSpeed * Time.fixedDeltaTime);
+            //Play footstep 
+            if(!sfx.IsRunning()) 
+                StartCoroutine(sfx.PlayFootStep(FootStepDelay));
             return true;  
         } else {
             return false; 
@@ -75,5 +106,24 @@ public class PlayerController : MonoBehaviour
 
     void OnMove(InputValue movementValue) {
         movementInput = movementValue.Get<Vector2>(); 
+    }
+
+    void TorchPositionController(Transform torchTransform){
+
+        //Rotate
+        float angle = torchTransform.rotation.eulerAngles.z;
+        if (Input.GetKeyDown("left"))
+        {
+            angle = 90.0f;
+        }else if (Input.GetKeyDown("up")){
+            angle = 0.0f;
+        }else if (Input.GetKeyDown("right")){
+            angle = 270f;
+        }else if (Input.GetKeyDown("down")){
+            angle = 180.0f;
+        }
+
+        torchTransform.rotation = Quaternion.Euler(0.0f, 0.0f, angle);
+
     }
 }
