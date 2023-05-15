@@ -17,6 +17,8 @@ public class PlayerController : MonoBehaviour
     SoundEffects sfx; 
     public float FootStepDelay = 0;
     private ObjectController objectController; 
+    private bool walkOnRock = false; 
+    private AreaEffector2D currentField; 
     
 
     public Transform torchTransform;
@@ -125,5 +127,28 @@ public class PlayerController : MonoBehaviour
 
         torchTransform.rotation = Quaternion.Euler(0.0f, 0.0f, angle);
 
+    }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        if(other.gameObject.name == "Throwable_Rock") {
+            walkOnRock = true;
+        }
+
+        if(other.gameObject.layer == LayerMask.NameToLayer("Water")) {
+            if(walkOnRock) {
+                //Player is walking on a rock, disable areaaffector
+                currentField = other.gameObject.GetComponent<AreaEffector2D>();
+                currentField.enabled = false; 
+            } else {
+                other.gameObject.GetComponent<AreaEffector2D>().enabled = true;
+            }
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other) {
+        if(other.gameObject.name == "Throwable_Rock") {
+            walkOnRock = false; 
+            currentField.enabled = true;
+        }
     }
 }

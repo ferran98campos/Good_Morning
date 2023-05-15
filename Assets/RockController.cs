@@ -5,18 +5,24 @@ using UnityEngine;
 public class RockController : MonoBehaviour
 {
 
-    private GameObject forcefield;
+    private Collider2D rock_collider;
     
-    void start() {
-        forcefield = GameObject.Find("ForceField");
+    void Start() {
+        rock_collider = GetComponent<Collider2D>(); 
     }
 
-    void Update()
-    {
-        
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        if(other.gameObject.layer == LayerMask.NameToLayer("Water")) {
+            rock_collider.isTrigger = true; 
+        };
     }
 
-    private void OnTriggerEnter(Collision other) {
-        
+    private void OnTriggerExit2D(Collider2D other) {
+        if(other.gameObject.layer == LayerMask.NameToLayer("Water")) {
+            rock_collider.isTrigger = false; 
+        };
     }
+
+    
 }
