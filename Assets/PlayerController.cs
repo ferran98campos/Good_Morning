@@ -130,7 +130,7 @@ public class PlayerController : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
-        if(other.gameObject.name == "Throwable_Rock") {
+        if(other.gameObject.tag == "Throwable_Rock") {
             walkOnRock = true;
         }
 
@@ -146,9 +146,11 @@ public class PlayerController : MonoBehaviour
     }
 
     private void OnTriggerExit2D(Collider2D other) {
-        if(other.gameObject.name == "Throwable_Rock") {
+        if(other.gameObject.tag == "Throwable_Rock") {
             walkOnRock = false; 
-            currentField.enabled = true;
+            if(currentField != null)
+                currentField.enabled = true;
+            
         }
     }
 }
