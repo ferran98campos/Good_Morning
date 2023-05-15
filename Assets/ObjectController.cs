@@ -60,7 +60,7 @@ public class ObjectController : MonoBehaviour
     }
 
     void DropItem() {
-        itemHolding.transform.position = transform.position + Direction * 0.3f;
+        itemHolding.transform.position = GetComponent<Collider2D>().bounds.center + Direction * 0.3f;
         itemHolding.transform.parent = null;
         itemHolding.GetComponent<SpriteRenderer>().sortingOrder = -1; 
         

@@ -5,13 +5,18 @@ using UnityEngine;
 public class RockController : MonoBehaviour
 {
 
-    // Update is called once per frame
+    private GameObject forcefield;
+    
+    void start() {
+        forcefield = GameObject.Find("ForceField");
+    }
+
     void Update()
     {
         
     }
 
-    private void OnCollisionEnter(Collision other) {
+    private void OnTriggerEnter(Collision other) {
         
     }
 }
