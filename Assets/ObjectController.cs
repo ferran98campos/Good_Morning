@@ -26,7 +26,7 @@ public class ObjectController : MonoBehaviour
 
         if (Input.GetKey(throwKey) && itemHolding) {
             throwDuration += Time.deltaTime;
-            Debug.Log(throwDuration);
+
             throwDuration = Mathf.Clamp(throwDuration, 0f, maxThrowDuration);
         }
 
@@ -36,9 +36,15 @@ public class ObjectController : MonoBehaviour
         }
     }
 
+    //Code for drawing the gizmos circle. Use for debugging. 
+    // private void OnDrawGizmosSelected()
+    // {
+    //     Gizmos.DrawWireSphere(GetComponent<Collider2D>().bounds.center + Direction/4f, .1f);
+    // }
+
     void PickUpItem()
     {
-        Collider2D pickUpItem = Physics2D.OverlapCircle(transform.position + Direction, .2f, pickUpMask);
+        Collider2D pickUpItem = Physics2D.OverlapCircle(GetComponent<Collider2D>().bounds.center + Direction/4f, .1f, pickUpMask);
         if (pickUpItem)
         {   
             itemHolding = pickUpItem.gameObject;
@@ -54,7 +60,7 @@ public class ObjectController : MonoBehaviour
     }
 
     void DropItem() {
-        itemHolding.transform.position = transform.position + Direction * 0.3f;
+        itemHolding.transform.position = GetComponent<Collider2D>().bounds.center + Direction * 0.3f;
         itemHolding.transform.parent = null;
         itemHolding.GetComponent<SpriteRenderer>().sortingOrder = -1; 
         
@@ -74,7 +80,7 @@ public class ObjectController : MonoBehaviour
         for (int i = 0; i < 25; i++) {
             item.transform.position = Vector3.Lerp(startPoint, endPoint, i* .04f);
             //Adjust this for animation duration
-            yield return new WaitForSeconds(throwDuration * 0.02F); 
+            yield return new WaitForSeconds(throwDuration * 0.001F); 
         }
         
         if (item.GetComponent<Rigidbody2D>()) {

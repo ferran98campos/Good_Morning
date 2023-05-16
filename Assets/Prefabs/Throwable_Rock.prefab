@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 5362590037502177420}
   - component: {fileID: 5696359619675059401}
   - component: {fileID: 6837073085715761552}
-  m_Layer: 0
+  - component: {fileID: 6128532860597496032}
+  m_Layer: 6
   m_Name: Throwable_Rock
-  m_TagString: Untagged
+  m_TagString: Throwable_Rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,7 +100,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.029139102, y: -0.04799986}
+  m_Offset: {x: 0.030101776, y: -0.013984203}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -110,7 +111,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5943569, y: 0.39300632}
+  m_Size: {x: 0.650435, y: 0.52525043}
   m_EdgeRadius: 0
 --- !u!50 &6837073085715761552
 Rigidbody2D:
@@ -132,4 +133,16 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7
+--- !u!114 &6128532860597496032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1150578690277472557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40b7cc807db225747b1f84a018257c15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
