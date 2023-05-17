@@ -24,6 +24,9 @@ public class PlayerController : MonoBehaviour
     public Transform torchTransform;
     bool torchOn;
 
+    // For detecting a layer
+    [SerializeField] private LayerMask layerMask;
+    private bool isSwimming = false;
     
 
     void Start()
@@ -42,6 +45,19 @@ public class PlayerController : MonoBehaviour
     }
 
     void Update() {
+        // For detecting whether in the river
+        bool isTouchingWater = Physics2D.OverlapCircle(rb.position, 0.2f, layerMask);
+        if (isTouchingWater && !isSwimming)
+        {
+            isSwimming = true;
+            animator.SetBool("IsSwimming", true);
+        }
+        else if (!isTouchingWater && isSwimming)
+        {
+            isSwimming = false;
+            animator.SetBool("IsSwimming", false);
+        }
+
         //Making sure that animations catch up 
         animator.SetFloat("Horizontal", movementInput.x);
         animator.SetFloat("Vertical", movementInput.y);
@@ -96,7 +112,7 @@ public class PlayerController : MonoBehaviour
             //Ray does not collide
             rb.MovePosition(rb.position + direction * movementSpeed * Time.fixedDeltaTime);
             //Play footstep 
-            if(!sfx.IsRunning()) 
+            if(!sfx.IsRunning() && !isSwimming) 
                 StartCoroutine(sfx.PlayFootStep(FootStepDelay));
             return true;  
         } else {
