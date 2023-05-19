@@ -12,14 +12,15 @@ public class DialogueTrigger : MonoBehaviour
     public float wordSpeed;
     public bool playerIsClose;
     private bool dialogueIsShown = true;
-    // public AudioClip audioClip;
     public AudioSource audioSource;
     private bool audioPlayed = false;
+    public GameObject playerObject;
+    private PlayerController playerController;
 
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        // audioSource.clip = audioClip;
+        playerController = playerObject.GetComponent<PlayerController>();
     }
 
     void Update()
@@ -35,6 +36,7 @@ public class DialogueTrigger : MonoBehaviour
             {
                 dialoguePanel.SetActive(true);
                 StartCoroutine(Typing());
+                DisablePlayerController();
                 PlayAudio();
             }
         }
@@ -46,6 +48,7 @@ public class DialogueTrigger : MonoBehaviour
         index = 0;
         dialoguePanel.SetActive(false);
         StopAudio(); 
+        EnablePlayerController();
     }
 
     IEnumerator Typing()
@@ -92,7 +95,6 @@ public class DialogueTrigger : MonoBehaviour
 
     void PlayAudio()
     {
-        Debug.Log("播放音频");
         if (audioSource != null && !audioPlayed)
         {
             audioSource.Play();
@@ -102,10 +104,25 @@ public class DialogueTrigger : MonoBehaviour
 
     void StopAudio()
     {
-        Debug.Log("停止音频");
         if (audioSource != null && audioPlayed)
         {
             audioSource.Stop();
+        }
+    }
+
+    void DisablePlayerController()
+    {
+        if (playerController != null)
+        {
+            playerController.enabled = false;
+        }
+    }
+
+    void EnablePlayerController()
+    {
+        if (playerController != null)
+        {
+            playerController.enabled = true;
         }
     }
 }
