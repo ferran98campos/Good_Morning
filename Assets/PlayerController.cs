@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviour
 
     void Update() {
         // For detecting whether in the river
-        bool isTouchingWater = Physics2D.OverlapCircle(rb.position, 0.2f, layerMask);
+        bool isTouchingWater = Physics2D.OverlapCircle(GetComponent<Collider2D>().bounds.center, 0.2f, layerMask);
         if (isTouchingWater && !isSwimming)
         {
             isSwimming = true;
