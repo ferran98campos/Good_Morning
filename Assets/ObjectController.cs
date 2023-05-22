@@ -39,7 +39,7 @@ public class ObjectController : MonoBehaviour
     //Code for drawing the gizmos circle. Use for debugging. 
     // private void OnDrawGizmosSelected()
     // {
-    //     Gizmos.DrawWireSphere(GetComponent<Collider2D>().bounds.center + Direction/4f, .1f);
+    //     Gizmos.DrawWireSphere(GetComponent<Collider2D>().bounds.center, .2f);
     // }
 
     void PickUpItem()
@@ -76,6 +76,8 @@ public class ObjectController : MonoBehaviour
         if(throwDuration < 0.2F) throwDuration = 0.2F;
         Vector3 endPoint = transform.position + Direction * throwForce * throwDuration; 
         item.transform.parent = null; 
+        //Play shoot-noise 
+        item.GetComponent<AudioSource>().Play(); 
 
         for (int i = 0; i < 25; i++) {
             item.transform.position = Vector3.Lerp(startPoint, endPoint, i* .04f);

@@ -19,6 +19,8 @@ public class PlayerController : MonoBehaviour
     private ObjectController objectController; 
     private bool walkOnRock = false; 
     private AreaEffector2D currentField; 
+    private Collider2D playerCollider; 
+    List<GameObject> rocks = new List<GameObject>();
     
 
     public Transform torchTransform;
@@ -37,6 +39,7 @@ public class PlayerController : MonoBehaviour
         sfx = GetComponent<SoundEffects>(); 
         animator = GetComponent<Animator>(); 
         objectController = GetComponent<ObjectController>(); 
+        playerCollider = GetComponent<Collider2D>(); 
 
         //Torch
         torchOn = true;
@@ -146,8 +149,8 @@ public class PlayerController : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
-        Debug.Log(other.gameObject.name);
         if(other.gameObject.tag == "Throwable_Rock") {
+            rocks.Add(other.gameObject);
             walkOnRock = true;
             if(currentField != null)
                 currentField.enabled = false;
@@ -157,7 +160,6 @@ public class PlayerController : MonoBehaviour
             currentField = other.gameObject.GetComponent<AreaEffector2D>();
             if(walkOnRock) {
                 //Player is walking on a rock, disable areaaffector
-                currentField = other.gameObject.GetComponent<AreaEffector2D>();
                 currentField.enabled = false; 
             }
         }
@@ -165,10 +167,13 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other) {
         if(other.gameObject.tag == "Throwable_Rock") {
-            walkOnRock = false; 
-            if(currentField != null)
-                currentField.enabled = true;
-            
+            rocks.Remove(other.gameObject);
+
+            if(rocks.Count == 0) {
+                walkOnRock = false; 
+                if(currentField != null)
+                    currentField.enabled = true;
+            }
         }
     }
 }
