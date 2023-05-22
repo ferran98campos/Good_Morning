@@ -47,12 +47,12 @@ public class PlayerController : MonoBehaviour
     void Update() {
         // For detecting whether in the river
         bool isTouchingWater = Physics2D.OverlapCircle(GetComponent<Collider2D>().bounds.center, 0.2f, layerMask);
-        if (isTouchingWater && !isSwimming)
+        if (isTouchingWater && !isSwimming && !walkOnRock)
         {
             isSwimming = true;
             animator.SetBool("IsSwimming", true);
         }
-        else if (!isTouchingWater && isSwimming)
+        else if (!isTouchingWater && isSwimming || walkOnRock)
         {
             isSwimming = false;
             animator.SetBool("IsSwimming", false);
@@ -146,17 +146,19 @@ public class PlayerController : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
+        Debug.Log(other.gameObject.name);
         if(other.gameObject.tag == "Throwable_Rock") {
             walkOnRock = true;
+            if(currentField != null)
+                currentField.enabled = false;
         }
 
         if(other.gameObject.layer == LayerMask.NameToLayer("Water")) {
+            currentField = other.gameObject.GetComponent<AreaEffector2D>();
             if(walkOnRock) {
                 //Player is walking on a rock, disable areaaffector
                 currentField = other.gameObject.GetComponent<AreaEffector2D>();
                 currentField.enabled = false; 
-            } else {
-                other.gameObject.GetComponent<AreaEffector2D>().enabled = true;
             }
         }
     }

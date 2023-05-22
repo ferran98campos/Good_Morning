@@ -55,7 +55,7 @@ public class ObjectController : MonoBehaviour
             {
                 itemHolding.GetComponent<Rigidbody2D>().simulated = false;
             }
-            itemHolding.GetComponent<SpriteRenderer>().sortingOrder = 1; 
+            itemHolding.GetComponent<SpriteRenderer>().sortingOrder = 2; 
         }
     }
 
@@ -80,7 +80,7 @@ public class ObjectController : MonoBehaviour
         for (int i = 0; i < 25; i++) {
             item.transform.position = Vector3.Lerp(startPoint, endPoint, i* .04f);
             //Adjust this for animation duration
-            yield return new WaitForSeconds(throwDuration * 0.001F); 
+            yield return new WaitForSeconds(throwDuration * 0.01F); 
         }
         
         if (item.GetComponent<Rigidbody2D>()) {

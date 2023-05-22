@@ -11,7 +11,7 @@ public class SoundEffects : MonoBehaviour
     
     void Start()
     {
-        sfx.volume = 0.3f;
+        sfx.volume = 0.2f;
     }
 
     public IEnumerator PlayFootStep(float WaitTime) {
