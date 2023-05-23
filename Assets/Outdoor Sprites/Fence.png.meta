@@ -33,33 +33,21 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-<<<<<<< HEAD
     filterMode: 0
-=======
-    filterMode: 1
->>>>>>> main
     aniso: 1
     mipBias: 0
     wrapU: 1
     wrapV: 1
-    wrapW: 1
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-<<<<<<< HEAD
   spriteMode: 2
-=======
-  spriteMode: 1
->>>>>>> main
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-<<<<<<< HEAD
   spritePixelsToUnits: 32
-=======
-  spritePixelsToUnits: 100
->>>>>>> main
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -82,11 +70,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-<<<<<<< HEAD
     textureCompression: 2
-=======
-    textureCompression: 1
->>>>>>> main
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -117,7 +101,6 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-<<<<<<< HEAD
   - serializedVersion: 3
     buildTarget: WebGL
     maxTextureSize: 2048
@@ -137,19 +120,19 @@ TextureImporter:
       name: Fence_0
       rect:
         serializedVersion: 2
-        x: 7
+        x: 0
         y: 0
         width: 32
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2b5c7eb2849404e4a830d360e9ba930c
-      internalID: -602885106
+      spriteID: 876532f048aa34e3fa0569c1d3cdc3c7
+      internalID: -1777775910
       vertices: []
       indices: 
       edges: []
@@ -158,19 +141,19 @@ TextureImporter:
       name: Fence_1
       rect:
         serializedVersion: 2
-        x: 39
+        x: 32
         y: 0
         width: 32
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7aacc8d13980c49ca8f34223776d613f
-      internalID: -445296467
+      spriteID: 2f24616aa5aa64185826c913c34cd14a
+      internalID: -1662783251
       vertices: []
       indices: 
       edges: []
@@ -179,19 +162,19 @@ TextureImporter:
       name: Fence_2
       rect:
         serializedVersion: 2
-        x: 71
+        x: 64
         y: 0
         width: 32
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d4c41628dbbcc4dfcad4517de6e7c626
-      internalID: -1558875098
+      spriteID: d2cb789ceb2a14ee09d402097b9a014f
+      internalID: -1813763480
       vertices: []
       indices: 
       edges: []
@@ -200,19 +183,19 @@ TextureImporter:
       name: Fence_3
       rect:
         serializedVersion: 2
-        x: 103
+        x: 96
         y: 0
         width: 32
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 97b4b1166cf5c4d858ca458e647f550c
-      internalID: 1001317980
+      spriteID: 71d5cf688f54d44bbb880295cf207553
+      internalID: -255395488
       vertices: []
       indices: 
       edges: []
@@ -221,19 +204,19 @@ TextureImporter:
       name: Fence_4
       rect:
         serializedVersion: 2
-        x: 135
+        x: 128
         y: 0
         width: 32
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b68a68d966c30411daa0f62dd0db2581
-      internalID: -530091787
+      spriteID: 6cdaa7ee36fb441288f1f3860764dc64
+      internalID: 2063093117
       vertices: []
       indices: 
       edges: []
@@ -242,19 +225,19 @@ TextureImporter:
       name: Fence_5
       rect:
         serializedVersion: 2
-        x: 167
+        x: 160
         y: 0
         width: 32
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd87aca22fe7a4afa83eaa2e51bf0124
-      internalID: -842028238
+      spriteID: 46bd6096099654665bc994c438fbff30
+      internalID: 1423878926
       vertices: []
       indices: 
       edges: []
@@ -263,50 +246,63 @@ TextureImporter:
       name: Fence_6
       rect:
         serializedVersion: 2
-        x: 199
+        x: 192
         y: 0
         width: 32
         height: 64
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6d189e982350441759e3956419357582
-      internalID: -1169618620
+      spriteID: c3b875c2eb9ba4a19b7d3dffa26f3df6
+      internalID: 1280469437
       vertices: []
       indices: 
       edges: []
       weights: []
-=======
-  spriteSheet:
-    serializedVersion: 2
-    sprites: []
->>>>>>> main
+    - serializedVersion: 2
+      name: Fence_7
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 32
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efdd2531ad0fd4bada51e71352937b15
+      internalID: 657586824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: ede0c6973e7bf439b920db820ab7d1cc
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-<<<<<<< HEAD
     nameFileIdTable:
-      Fence_0: -602885106
-      Fence_1: -445296467
-      Fence_2: -1558875098
-      Fence_3: 1001317980
-      Fence_4: -530091787
-      Fence_5: -842028238
-      Fence_6: -1169618620
-=======
-    nameFileIdTable: {}
->>>>>>> main
+      Fence_0: -1777775910
+      Fence_1: -1662783251
+      Fence_2: -1813763480
+      Fence_3: -255395488
+      Fence_4: 2063093117
+      Fence_5: 1423878926
+      Fence_6: 1280469437
+      Fence_7: 657586824
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

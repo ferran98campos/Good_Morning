@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: fence-cut
   m_EditorClassIdentifier: 
   m_AnimatedSprites:
-  - {fileID: -445296467, guid: 8c2edd3498c3b43f79016e58438e1973, type: 3}
-  - {fileID: -1169618620, guid: 8c2edd3498c3b43f79016e58438e1973, type: 3}
-  m_MinSpeed: 1
-  m_MaxSpeed: 1
+  - {fileID: -255395488, guid: 8c2edd3498c3b43f79016e58438e1973, type: 3}
+  - {fileID: 1280469437, guid: 8c2edd3498c3b43f79016e58438e1973, type: 3}
+  m_MinSpeed: 10
+  m_MaxSpeed: 10
   m_AnimationStartTime: 0
   m_AnimationStartFrame: 0
   m_TileColliderType: 1
