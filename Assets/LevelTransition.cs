@@ -1,3 +1,6 @@
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,12 +12,17 @@ public class LevelTransition : MonoBehaviour
     [SerializeField]
     private Text instructionText;
     public GameObject instructionPanel;
-
+    public SceneAsset followingScene;
     public int sceneBuildIndex;
     private bool playerCollided = false;
-
+    private Animator anim;
+    private GameObject canvas;
+    
     void Start()
     {
+        //anim.Play("FadeOut");
+        canvas = GameObject.FindWithTag("Transition");
+        anim = canvas.GetComponent<Animator>();
         instructionText.gameObject.SetActive(false);
     }
     
@@ -33,6 +41,7 @@ public class LevelTransition : MonoBehaviour
             playerCollided = true;
             instructionText.gameObject.SetActive(true);
             instructionPanel.SetActive(true);
+            
         }
     }
 
@@ -48,6 +57,12 @@ public class LevelTransition : MonoBehaviour
 
     private void TransitionToNextLevel()
     {
-        SceneManager.LoadScene(sceneBuildIndex, LoadSceneMode.Single);
+        anim.Play("FadeIn");
+        StartCoroutine(DelayedTransition(anim.GetCurrentAnimatorStateInfo(0).length));
+    }
+
+    IEnumerator DelayedTransition(float _delay = 0){
+            yield return new WaitForSeconds(_delay);
+            SceneManager.LoadScene(followingScene.name);
     }
 }
