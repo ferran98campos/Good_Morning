@@ -4139,5 +4139,17 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9215373872335987103, guid: 9d09260132c4f40409527bf17a856956, type: 3}
+      propertyPath: dialoguePanel
+      value: 
+      objectReference: {fileID: 954690454}
+    - target: {fileID: 9215373872335987103, guid: 9d09260132c4f40409527bf17a856956, type: 3}
+      propertyPath: instructionText
+      value: 
+      objectReference: {fileID: 1195813051}
+    - target: {fileID: 9215373872335987103, guid: 9d09260132c4f40409527bf17a856956, type: 3}
+      propertyPath: instructionPanel
+      value: 
+      objectReference: {fileID: 954690454}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d09260132c4f40409527bf17a856956, type: 3}
