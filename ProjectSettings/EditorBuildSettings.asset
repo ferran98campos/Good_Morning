@@ -9,14 +9,17 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
+    path: Assets/Scenes/exposition.unity
+    guid: 7994254628b4045b188cfcfaf648881f
+  - enabled: 1
     path: Assets/Scenes/outside-cave.unity
     guid: 83f05c72358874364b88b9de15b6dc52
   - enabled: 1
     path: Assets/Scenes/house.unity
     guid: db0050d6c22214d44b59f0dc2b343a8b
-  - enabled: 1
-    path: Assets/Scenes/outside-cave-after.unity
-    guid: 3f663000053532042943a3fe1e916bc5
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/first-cave.unity
     guid: 14402f60cff1f4cecb8774acb0797690
