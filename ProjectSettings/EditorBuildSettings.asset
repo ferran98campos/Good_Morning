@@ -17,4 +17,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/outside-cave-after.unity
     guid: 3f663000053532042943a3fe1e916bc5
+  - enabled: 1
+    path: Assets/Scenes/first-cave.unity
+    guid: 14402f60cff1f4cecb8774acb0797690
+  - enabled: 1
+    path: Assets/Scenes/scarf-room.unity
+    guid: de92767cfbdee4beba7573a5ee76d2af
+  - enabled: 1
+    path: Assets/Scenes/second-cave.unity
+    guid: 3313ce942d64246a09784f37925a6eab
+  - enabled: 1
+    path: Assets/Scenes/radio-tower.unity
+    guid: 7d65f8d9384e94a5292aae0313d16c09
   m_configObjects: {}

@@ -1,12 +1,15 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DialogueTrigger : MonoBehaviour
+public class ShadowPersonDialogue : MonoBehaviour
 {
     public GameObject dialoguePanel;
     public Text dialogueText;
+    public Image playerImage;
+    public Image shadowPersonImage;
     public string[] dialogue;
     private int index;
     public float wordSpeed;
@@ -15,13 +18,13 @@ public class DialogueTrigger : MonoBehaviour
     public AudioSource audioSource;
     private bool audioPlayed = false;
     public GameObject playerObject;
-    public GameObject shadowPerson;
-    private PlayerController playerController;
+    private ShadowPersonMovement playerController;
 
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        playerController = playerObject.GetComponent<PlayerController>();
+        // playerObject = GameObject.FindWithTag("ShadowPerson");
+        playerController = playerObject.GetComponent<ShadowPersonMovement>();
     }
 
     void Update()
@@ -35,9 +38,11 @@ public class DialogueTrigger : MonoBehaviour
             }
             else
             {
-                dialoguePanel.SetActive(true);
-                StartCoroutine(Typing());
                 DisablePlayerController();
+                dialoguePanel.SetActive(true);
+
+                StartCoroutine(Typing());
+
                 PlayAudio();
             }
         }
@@ -48,21 +53,41 @@ public class DialogueTrigger : MonoBehaviour
         dialogueText.text = "";
         index = 0;
         dialoguePanel.SetActive(false);
-        StopAudio(); 
+        StopAudio();
         EnablePlayerController();
-        
     }
 
     IEnumerator Typing()
     {
-        foreach (char letter in dialogue[index].ToCharArray())
+        for (int i = 0; i < dialogue.Length; i++)
         {
-            dialogueText.text += letter;
-            yield return new WaitForSeconds(wordSpeed);
+            
+            dialogueText.text = "";
+            playerImage.gameObject.SetActive(false);
+            shadowPersonImage.gameObject.SetActive(false);
+            if (index == 1 || index == 3 || index == 5)
+            {
+                playerImage.gameObject.SetActive(true);
+            }
+            else
+            {
+                shadowPersonImage.gameObject.SetActive(true);
+            }
+            foreach (char letter in dialogue[index].ToCharArray())
+            {
+                dialogueText.text += letter;
+                yield return new WaitForSeconds(wordSpeed);
+            }
+            yield return new WaitForSeconds(2);
+            if (i < dialogue.Length - 1)
+            {
+                index++;
+            }
+            else
+            {
+                zeroText();
+            }
         }
-        yield return new WaitForSeconds(2);
-        zeroText();
-        shadowPerson.SetActive(true);
     }
 
     public void NextLine()
@@ -81,7 +106,7 @@ public class DialogueTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("ShadowPerson"))
         {
             playerIsClose = true;
         }
@@ -89,7 +114,7 @@ public class DialogueTrigger : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("ShadowPerson"))
         {
             playerIsClose = false;
             zeroText();
@@ -117,7 +142,8 @@ public class DialogueTrigger : MonoBehaviour
     {
         if (playerController != null)
         {
-            playerController.enabled = false;
+            //playerController.enabled = false;
+            playerController.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
         }
     }
 
@@ -125,7 +151,8 @@ public class DialogueTrigger : MonoBehaviour
     {
         if (playerController != null)
         {
-            playerController.enabled = true;
+            //playerController.enabled = true;
+            playerController.GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = true;
         }
     }
 }
