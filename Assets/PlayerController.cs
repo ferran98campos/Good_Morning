@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
     private AreaEffector2D currentField; 
     private Collider2D playerCollider; 
     List<GameObject> rocks = new List<GameObject>();
+    public bool holdingWireCutter = false; 
     
 
     public Transform torchTransform;
