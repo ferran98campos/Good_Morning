@@ -23,7 +23,7 @@ public class WirecutterController : MonoBehaviour
     {
         if(Input.GetKeyDown(pickupKey) && inRange) {
             StartCoroutine(showPickupText());
-            player.GetComponent<PlayerController>().holdingWireCutter = true;  
+            player.GetComponent<PlayerController>().toggleWireCutter();  
         }
     }
 
