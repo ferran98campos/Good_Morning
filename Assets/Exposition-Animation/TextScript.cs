@@ -16,19 +16,17 @@ public class TextScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        text.text = exposition[index];
+        text.text = " ";
     }
 
     // Update is called once per frame
     void Update()
     {
-        count++;
-        if(index==0 &  count % 900 == 0){ index++; }
-        if (index<6 & count % 1500 == 0) { index++; }
-        else if(count % 1700 == 0)
-        {
-            index++;
-        }
         text.text = exposition[index];
+        count++;
+        if(index==0 &  count % 900 == 0){ index++;}
+        else if (index < 6 & count % 1500 == 900) { index++;}
+        else if(index > 5 & index < 9 & count % 2500 == 0){ index++;}
+        
     }
 }
