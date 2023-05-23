@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem; 
 
+ public class TransitionAux  
+ {
+    static public int lastScene = 0;    // this is reachable from everywhere
+ }
+
 public class PlayerController : MonoBehaviour
 {   
     public float movementSpeed = 1f;
@@ -33,6 +38,12 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+
+        if(TransitionAux.lastScene == 1){
+            this.transform.position = new Vector3(-2.2f, -0.3f, 0.0f);
+            TransitionAux.lastScene = 0;
+        }
+
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();  
         animator = GetComponent<Animator>();

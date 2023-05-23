@@ -1,57 +1,51 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using UnityEngine.SceneManagement;
 
 namespace TMPro.Examples
 {
-    
+  
+
     public class SimpleScript : MonoBehaviour
     {
+        //public SceneAsset sceneToLoad;
+        private Animator anim;
+        private GameObject canvas;
+        private bool control = false;
 
-        private TextMeshPro m_textMeshPro;
-        //private TMP_FontAsset m_FontAsset;
-
-        private const string label = "The <#0050FF>count is: </color>{0:2}";
-        private float m_frame;
-
-
+        void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collision.gameObject.tag == "Player")
+            {
+                Debug.Log("Hola");
+                control = true;
+                anim.Play("FadeIn");
+                StartCoroutine(DelayedTransition(anim.GetCurrentAnimatorStateInfo(0).length));
+            }
+        }
+        
         void Start()
         {
-            // Add new TextMesh Pro Component
-            m_textMeshPro = gameObject.AddComponent<TextMeshPro>();
-
-            m_textMeshPro.autoSizeTextContainer = true;
-
-            // Load the Font Asset to be used.
-            //m_FontAsset = Resources.Load("Fonts & Materials/LiberationSans SDF", typeof(TMP_FontAsset)) as TMP_FontAsset;
-            //m_textMeshPro.font = m_FontAsset;
-
-            // Assign Material to TextMesh Pro Component
-            //m_textMeshPro.fontSharedMaterial = Resources.Load("Fonts & Materials/LiberationSans SDF - Bevel", typeof(Material)) as Material;
-            //m_textMeshPro.fontSharedMaterial.EnableKeyword("BEVEL_ON");
-            
-            // Set various font settings.
-            m_textMeshPro.fontSize = 48;
-
-            m_textMeshPro.alignment = TextAlignmentOptions.Center;
-            
-            //m_textMeshPro.anchorDampening = true; // Has been deprecated but under consideration for re-implementation.
-            //m_textMeshPro.enableAutoSizing = true;
-
-            //m_textMeshPro.characterSpacing = 0.2f;
-            //m_textMeshPro.wordSpacing = 0.1f;
-
-            //m_textMeshPro.enableCulling = true;
-            m_textMeshPro.enableWordWrapping = false;
-
-            //textMeshPro.fontColor = new Color32(255, 255, 255, 255);
+            canvas = GameObject.FindWithTag("Transition");
+            anim = canvas.GetComponent<Animator>();
+            anim.Play("FadeOut");
         }
 
-
+        IEnumerator DelayedTransition(float _delay = 0){
+            yield return new WaitForSeconds(_delay);
+            SceneManager.LoadScene("Scenes/first-cave");
+            
+        }
         void Update()
-        {
-            m_textMeshPro.SetText(label, m_frame % 1000);
-            m_frame += 1 * Time.deltaTime;
+        {    
+           /* Debug.Log(anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 1);
+            if(anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 1 && control)
+            {
+                Debug.Log("Animation is Done");
+                control = false;
+                SceneManager.LoadScene("Scenes/first-cave");
+            }*/
+
         }
 
     }
