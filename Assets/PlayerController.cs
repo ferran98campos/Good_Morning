@@ -104,14 +104,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void toggleWireCutter() {
-        holdingWireCutter = holdingWireCutter ? false : true; 
-    }
-
-    public bool isHoldingWireCutter() {
-        return holdingWireCutter;
-    }
-
     //Casts a ray and sees if making this move would result in collision. 
     private bool TryMove(Vector2 direction) {
         int count = rb.Cast(
@@ -132,6 +124,14 @@ public class PlayerController : MonoBehaviour
         }
 
 
+    }
+
+    public void toggleWireCutter() {
+        holdingWireCutter = holdingWireCutter ? false : true; 
+    }
+
+    public bool isHoldingWireCutter() {
+        return holdingWireCutter; 
     }
 
     void OnMove(InputValue movementValue) {
