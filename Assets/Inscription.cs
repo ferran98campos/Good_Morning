@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
+//using TMPro;
 
 
 public class Inscription : MonoBehaviour
 {
     [SerializeField]
-    private TextMeshProUGUI inscriptionText;
+    // private TextMeshProUGUI inscriptionText;
+    private Text inscriptionText;
     public GameObject inscriptionPanel;
 
     // Start is called before the first frame update
@@ -19,7 +20,8 @@ public class Inscription : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.name.Equals("Player"))
+        //if(collision.gameObject.name.Equals("Player"))
+        if(collision.CompareTag("Player"))
         {
             inscriptionText.gameObject.SetActive(true);
             inscriptionPanel.SetActive(true);
@@ -28,7 +30,8 @@ public class Inscription : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if(collision.gameObject.name.Equals("Player"))
+        //if(collision.gameObject.name.Equals("Player"))
+        if(collision.CompareTag("Player"))
         {
             inscriptionText.gameObject.SetActive(false);
             inscriptionPanel.SetActive(false);
