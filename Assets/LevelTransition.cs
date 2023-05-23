@@ -1,12 +1,8 @@
-#if UNITY_EDITOR
-using UnityEditor;
-#endif  
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using static TransitionAux;
 
 public class LevelTransition : MonoBehaviour
 {
@@ -17,14 +13,8 @@ public class LevelTransition : MonoBehaviour
     public int sceneBuildIndex;
     private bool playerCollided = false;
 
-    private Animator anim;
-    private GameObject canvas;
-    public SceneAsset followingScene;
-
     void Start()
     {
-        canvas = GameObject.FindWithTag("Transition");
-        anim = canvas.GetComponent<Animator>();
         instructionText.gameObject.SetActive(false);
     }
     
@@ -32,18 +22,8 @@ public class LevelTransition : MonoBehaviour
     {
         if (playerCollided && Input.GetKeyDown(KeyCode.E))
         {
-                anim.Play("FadeIn");
-                if(SceneManager.GetActiveScene().name == "house"){
-                    TransitionAux.lastScene = 1;
-                }
-
-                StartCoroutine(DelayedTransition(anim.GetCurrentAnimatorStateInfo(0).length));
+            TransitionToNextLevel();
         }
-    }
-
-    IEnumerator DelayedTransition(float _delay = 0){
-        yield return new WaitForSeconds(_delay);
-        SceneManager.LoadScene(followingScene.name);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
