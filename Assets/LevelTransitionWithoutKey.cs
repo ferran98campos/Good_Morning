@@ -7,16 +7,16 @@ using UnityEngine.UI;
 public class LevelTransitionWithoutKey : MonoBehaviour
 {
     [SerializeField]
-    // private Text instructionText;
-    // public GameObject instructionPanel;
+    private Text instructionText;
+    public GameObject instructionPanel;
 
     public int sceneBuildIndex;
     private bool playerCollided = false;
 
-    // void Start()
-    // {
-    //     instructionText.gameObject.SetActive(false);
-    // }
+    void Start()
+    {
+        instructionText.gameObject.SetActive(false);
+    }
     
     private void Update()
     {
@@ -31,8 +31,8 @@ public class LevelTransitionWithoutKey : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerCollided = true;
-            // instructionText.gameObject.SetActive(true);
-            // instructionPanel.SetActive(true);
+            instructionText.gameObject.SetActive(true);
+            instructionPanel.SetActive(true);
         }
     }
 
@@ -41,8 +41,8 @@ public class LevelTransitionWithoutKey : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerCollided = false;
-            // instructionText.gameObject.SetActive(false);
-            // instructionPanel.SetActive(false);
+            instructionText.gameObject.SetActive(false);
+            instructionPanel.SetActive(false);
         }
     }
 
