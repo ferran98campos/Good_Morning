@@ -11,6 +11,7 @@ public class WirecutterController : MonoBehaviour
     private bool inRange = false; 
     public GameObject instructionPanel;
     public Text instructionText;
+    string temp; 
 
     // Start is called before the first frame update
     void Start()
@@ -22,20 +23,18 @@ public class WirecutterController : MonoBehaviour
     void Update()
     {
         if(Input.GetKeyDown(pickupKey) && inRange) {
+            temp = instructionText.text; 
             StartCoroutine(showPickupText());
-            player.GetComponent<PlayerController>().holdingWireCutter = true;  
+            player.GetComponent<PlayerController>().toggleWireCutter();  
         }
     }
 
     IEnumerator showPickupText() {
-
-        string temp = instructionText.text; 
         instructionText.text = "You picked up a wirecutter";
         instructionPanel.SetActive(true);
         yield return new WaitForSeconds(2); 
         instructionPanel.SetActive(false);
         instructionText.text = temp; 
-        //Just wait a bit more to avoid bugs when destroying
         Destroy(gameObject);
     }
 

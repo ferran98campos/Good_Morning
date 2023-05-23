@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     private AreaEffector2D currentField; 
     private Collider2D playerCollider; 
     List<GameObject> rocks = new List<GameObject>();
-    public bool holdingWireCutter = false; 
+    public static bool holdingWireCutter = false; 
     
 
     public Transform torchTransform;
@@ -102,6 +102,14 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void toggleWireCutter() {
+        holdingWireCutter = holdingWireCutter ? false : true; 
+    }
+
+    public bool isHoldingWireCutter() {
+        return holdingWireCutter;
     }
 
     //Casts a ray and sees if making this move would result in collision. 
