@@ -301,12 +301,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &172419828 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1359964358040318071, guid: afc886d19c0437144bfec21cc23e876e, type: 3}
-  m_PrefabInstance: {fileID: 606908988}
-  m_PrefabAsset: {fileID: 0}
---- !u!43 &207179330
+--- !u!43 &90830565
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -470,6 +465,11 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &172419828 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1359964358040318071, guid: afc886d19c0437144bfec21cc23e876e, type: 3}
+  m_PrefabInstance: {fileID: 606908988}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &267515479
 GameObject:
   m_ObjectHideFlags: 0
@@ -2614,7 +2614,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1370558925
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3015,8 +3015,8 @@ MonoBehaviour:
   - {x: 0.49999994, y: 0.50000006, z: 0}
   - {x: 0.49999994, y: -0.5, z: 0}
   m_ShapePathHash: 0
-  m_Mesh: {fileID: 1608375268}
-  m_InstanceId: 73926
+  m_Mesh: {fileID: 90830565}
+  m_InstanceId: 56250
   m_LocalBounds:
     m_Center: {x: -0.000000029802322, y: 0, z: 0}
     m_Extent: {x: 0.49999997, y: 0.5, z: 0}
@@ -3225,7 +3225,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1507010772}
   m_CullTransparentMesh: 1
---- !u!43 &1608375268
+--- !u!43 &1581851355
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3447,8 +3447,8 @@ MonoBehaviour:
   - {x: 0.49999994, y: 0.50000006, z: 0}
   - {x: 0.49999994, y: -0.5, z: 0}
   m_ShapePathHash: 0
-  m_Mesh: {fileID: 207179330}
-  m_InstanceId: 73948
+  m_Mesh: {fileID: 1581851355}
+  m_InstanceId: 56272
   m_LocalBounds:
     m_Center: {x: -0.000000029802322, y: 0, z: 0}
     m_Extent: {x: 0.49999997, y: 0.5, z: 0}
@@ -4048,7 +4048,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.22258905, y: -0.43652335}
+  m_Offset: {x: 0.25818607, y: -0.9386303}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -4059,7 +4059,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.1517365, y: 0.52886814}
+  m_Size: {x: 0.6172375, y: 0.28156197}
   m_EdgeRadius: 0
 --- !u!4 &2105477545
 Transform:
@@ -4084,12 +4084,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 425951261657164376, guid: 9d09260132c4f40409527bf17a856956, type: 3}
+      propertyPath: m_Size.x
+      value: 0.881143
+      objectReference: {fileID: 0}
+    - target: {fileID: 425951261657164376, guid: 9d09260132c4f40409527bf17a856956, type: 3}
       propertyPath: m_Size.y
-      value: 1.7052183
+      value: 2.261486
+      objectReference: {fileID: 0}
+    - target: {fileID: 425951261657164376, guid: 9d09260132c4f40409527bf17a856956, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.016095579
       objectReference: {fileID: 0}
     - target: {fileID: 425951261657164376, guid: 9d09260132c4f40409527bf17a856956, type: 3}
       propertyPath: m_Offset.y
-      value: -0.37686598
+      value: -0.57294893
       objectReference: {fileID: 0}
     - target: {fileID: 2426004928818187509, guid: 9d09260132c4f40409527bf17a856956, type: 3}
       propertyPath: m_Text
