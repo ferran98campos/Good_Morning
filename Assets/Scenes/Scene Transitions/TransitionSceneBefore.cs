@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Transition : MonoBehaviour
+public class TransitionSceneBefore : MonoBehaviour
 {
  //public SceneAsset sceneToLoad;
         private Animator anim;
@@ -24,7 +24,7 @@ public class Transition : MonoBehaviour
         
         void Start()
         {
-            followingScene = SceneManager.GetActiveScene().buildIndex+1;
+            followingScene = SceneManager.GetActiveScene().buildIndex-1;
             canvas = GameObject.FindWithTag("Transition");
             anim = canvas.GetComponent<Animator>();
             anim.Play("FadeOut");

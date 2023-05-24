@@ -24,9 +24,6 @@ EditorBuildSettings:
     path: Assets/Scenes/outside-cave-after.unity
     guid: 3e7c3843081954cc78c75da2df173e05
   - enabled: 1
-    path: Assets/Scenes/Final Scene.unity
-    guid: 1578479678472a142960329290124288
-  - enabled: 1
     path: Assets/Scenes/first-cave.unity
     guid: 14402f60cff1f4cecb8774acb0797690
   - enabled: 1
@@ -35,6 +32,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/second-cave.unity
     guid: 3313ce942d64246a09784f37925a6eab
+  - enabled: 1
+    path: Assets/Scenes/Final Scene.unity
+    guid: 1578479678472a142960329290124288
   - enabled: 1
     path: Assets/Scenes/radio-tower.unity
     guid: 7d65f8d9384e94a5292aae0313d16c09

@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class LevelTransition : MonoBehaviour
+public class LevelTransitionBefore : MonoBehaviour
 {
     [SerializeField]
     private Text instructionText;
@@ -18,7 +18,7 @@ public class LevelTransition : MonoBehaviour
     
     void Start()
     {
-        followingScene = SceneManager.GetActiveScene().buildIndex+1;
+        followingScene = SceneManager.GetActiveScene().buildIndex-1;
         canvas = GameObject.FindWithTag("Transition");
         anim = canvas.GetComponent<Animator>();
         instructionText.gameObject.SetActive(false);
