@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Throwable_Rock
   - ShadowPerson
+  - Transition
+  - Logo
   layers:
   - Default
   - TransparentFX

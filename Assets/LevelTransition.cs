@@ -20,10 +20,10 @@ public class LevelTransition : MonoBehaviour
     
     void Start()
     {
-        //anim.Play("FadeOut");
         canvas = GameObject.FindWithTag("Transition");
         anim = canvas.GetComponent<Animator>();
         instructionText.gameObject.SetActive(false);
+        anim.Play("FadeOut");
     }
     
     private void Update()
