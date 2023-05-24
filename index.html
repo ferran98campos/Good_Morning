@@ -5,24 +5,35 @@
     <style>
         body {
             font-family: 'Courier New', monospace;
-            margin: 0;
-            padding: 0;
+            
             background-color: #000;
             color: #fff;
 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
             background-image: url(Assets/cave\ sprites/cave-floor.png);
             background-repeat: repeat;
+        }
+        .body-inner {
+            max-width: 50%; /* Or whatever maximum width you prefer */
+            width: 100%;
         }
         header {
             position: relative;
             height: 150px;
             background-color: #000;
             color: #fff;
-            padding: 10px;
+            padding: 2rem;
             text-align: center;
 
             background-image: url(Assets/cave\ sprites/cave-floor.png);
             background-repeat: repeat;
+        }
+        .logo {
+            max-width: 240px;
         }
         section {
             margin: 20px;
@@ -94,69 +105,73 @@
             margin: 0;
         }
         .team {
+            display: flex;
+            flex-direction: column;
             margin-bottom: 3rem;
         }
     </style>
 </head>
 <body>
-    <header>
+    <div class="body-inner">
         <header>
             <img src="static/logo-export.png" alt="Logo" class="logo">
         </header>
-    </header>
-
-    <section class="game-top">
-        <img src="static/outdoor.png" alt="Game screenshot 1" class="game-screenshot">
-        <div class="text-content">
-            <h2>Captivating Mystery</h2>
-            <p>The story of Good Morning is based on the unexplained mysterious disappearance of another character in the eerie town that the unnamed character finds themself in...</p>
-        </div>
-    </section>
     
-    <section>
-        <img src="static/cave.png" alt="Game screenshot 2" class="game-screenshot">
-        <div class="text-content">
-            <h2>Intense Gameplay</h2>
-            <p>As the player explores parts of the town, they solve puzzles, evade dark enemies, and begin to get closer to the source and motivation of the mysterious shadow people...</p>
-        </div>
-    </section>
-
-    <section class="game-bottom">
-        <img src="static/water.png" alt="Game screenshot 3" class="game-screenshot">
-        <div class="text-content">
-            <h2>Your New Best Friend</h2>
-            <p>Along the way, the player is guided by the ever-present voice of a radio host. But what happens when the host begins to real their true, dark intentions?</p>
-        </div>
-    </section>
-
-    <section class="team">
-      <h2>Meet the Team</h2>
-      <div class="team-container">
-          <a href="https://github.com/carterwsmith" target="_blank">
-              <img src="static/carter.jpg" alt="Carter Smith" class="team-member">
-              <p>Carter Smith<br>Narrative</p>
-          </a>
-          <a href="https://github.com/ferran98campos" target="_blank">
-              <img src="static/ferran.jpg" alt="Ferran Campos" class="team-member">
-              <p>Ferran Campos<br>Design, Mechanics</p>
-          </a>
-          <a href="https://github.com/KarlFran66" target="_blank">
-              <img src="static/karl.png" alt="Karl Zhang" class="team-member">
-              <p>Karl Zhang<br>Mechanics</p>
-          </a>
-          <a href="https://github.com/malinjam" target="_blank">
-              <img src="static/malin.jpg" alt="Malin Marques" class="team-member">
-              <p>Malin Marques<br>Design, Mechanics</p>
-          </a>
-          <a href="https://github.com/skvarre" target="_blank">
-              <img src="static/tim.png" alt="Tim Olsen" class="team-member">
-              <p>Tim Olsen<br>Mechanics</p>
-          </a>
-      </div>
-  </section>
-  
-  <section>
-      <a href="https://github.com/ferran98campos/Good_Morning/releases/tag/Demo-v1.0" target="_blank" class="download-button">Download the demo</a>
-  </section>
+        <section class="game-top">
+            <img src="static/outdoor.png" alt="Game screenshot 1" class="game-screenshot">
+            <div class="text-content">
+                <h2>Captivating Mystery</h2>
+                <p>The story of Good Morning is based on the unexplained mysterious disappearance of another character in the eerie town that the unnamed character finds themself in...</p>
+            </div>
+        </section>
+        
+        <section>
+            <img src="static/cave.png" alt="Game screenshot 2" class="game-screenshot">
+            <div class="text-content">
+                <h2>Intense Gameplay</h2>
+                <p>As the player explores parts of the town, they solve puzzles, evade dark enemies, and begin to get closer to the source and motivation of the mysterious shadow people...</p>
+            </div>
+        </section>
+    
+        <section class="game-bottom">
+            <img src="static/water.png" alt="Game screenshot 3" class="game-screenshot">
+            <div class="text-content">
+                <h2>Your New Best Friend</h2>
+                <p>Along the way, the player is guided by the ever-present voice of a radio host. But what happens when the host begins to real their true, dark intentions?</p>
+            </div>
+        </section>
+    
+        <section class="team">
+          <div>
+            <h2>Meet the Team</h2>
+          </div>
+          <div class="team-container">
+              <a href="https://github.com/carterwsmith" target="_blank">
+                  <img src="static/carter.jpg" alt="Carter Smith" class="team-member">
+                  <p>Carter Smith<br>Narrative</p>
+              </a>
+              <a href="https://github.com/ferran98campos" target="_blank">
+                  <img src="static/ferran.jpg" alt="Ferran Campos" class="team-member">
+                  <p>Ferran Campos<br>Design, Mechanics</p>
+              </a>
+              <a href="https://github.com/KarlFran66" target="_blank">
+                  <img src="static/karl.png" alt="Karl Zhang" class="team-member">
+                  <p>Karl Zhang<br>Mechanics</p>
+              </a>
+              <a href="https://github.com/malinjam" target="_blank">
+                  <img src="static/malin.jpg" alt="Malin Marques" class="team-member">
+                  <p>Malin Marques<br>Design, Mechanics</p>
+              </a>
+              <a href="https://github.com/skvarre" target="_blank">
+                  <img src="static/tim.png" alt="Tim Olsen" class="team-member">
+                  <p>Tim Olsen<br>Mechanics</p>
+              </a>
+          </div>
+      </section>
+      
+      <section>
+          <a href="https://github.com/ferran98campos/Good_Morning/releases/tag/Demo-v1.0" target="_blank" class="download-button">Download the demo</a>
+      </section>
+    </div>
 </body>
 </html>
