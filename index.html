@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Good Morning Game</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            
+            background-color: #000;
+            color: #fff;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            background-image: url(Assets/cave\ sprites/cave-floor.png);
+            background-repeat: repeat;
+        }
+        .body-inner {
+            max-width: 50%; /* Or whatever maximum width you prefer */
+            width: 100%;
+        }
+        header {
+            position: relative;
+            height: 150px;
+            background-color: #000;
+            color: #fff;
+            padding: 2rem;
+            text-align: center;
+
+            background-image: url(Assets/cave\ sprites/cave-floor.png);
+            background-repeat: repeat;
+        }
+        .logo {
+            max-width: 240px;
+        }
+        section {
+            margin: 20px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        section:nth-child(odd) {
+            flex-direction: row;
+        }
+        section:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        section img.game-screenshot {
+            flex: 50%;
+            max-width: 40%;
+            border: 2px solid #fff;
+        }
+        section div.text-content {
+            flex: 50%;
+            max-width: 50%;
+            padding: 20px;
+        }
+        h2, p {
+            margin: 0;
+        }
+        a {
+            color: #fff;
+        }
+        .game-top {
+            margin-top: 3rem;
+        }
+        .game-bottom {
+            margin-bottom: 4rem;
+        }
+        .team-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .team-member {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            border: 2px solid #fff;
+        }
+        .download-button {
+            background-color: rgb(84, 104, 255);
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.5rem;
+            padding: 40px 80px;
+            border-radius: 5px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .download-button:hover {
+            transition: 0.2s;
+            background-color: rgb(0, 14, 121);
+            color: #fff;
+        }
+        .team-container a {
+            text-align: center;
+            display: block;
+            color: #fff;
+        }
+        .team-container p {
+            margin: 0;
+        }
+        .team {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 3rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="body-inner">
+        <header>
+            <img src="static/logo-export.png" alt="Logo" class="logo">
+        </header>
+    
+        <section class="game-top">
+            <img src="static/outdoor.png" alt="Game screenshot 1" class="game-screenshot">
+            <div class="text-content">
+                <h2>Captivating Mystery</h2>
+                <p>The story of Good Morning is based on the unexplained mysterious disappearance of another character in the eerie town that the unnamed character finds themself in...</p>
+            </div>
+        </section>
+        
+        <section>
+            <img src="static/cave.png" alt="Game screenshot 2" class="game-screenshot">
+            <div class="text-content">
+                <h2>Intense Gameplay</h2>
+                <p>As the player explores parts of the town, they solve puzzles, evade dark enemies, and begin to get closer to the source and motivation of the mysterious shadow people...</p>
+            </div>
+        </section>
+    
+        <section class="game-bottom">
+            <img src="static/water.png" alt="Game screenshot 3" class="game-screenshot">
+            <div class="text-content">
+                <h2>Your New Best Friend</h2>
+                <p>Along the way, the player is guided by the ever-present voice of a radio host. But what happens when the host begins to real their true, dark intentions?</p>
+            </div>
+        </section>
+    
+        <section class="team">
+          <div>
+            <h2>Meet the Team</h2>
+          </div>
+          <div class="team-container">
+              <a href="https://github.com/carterwsmith" target="_blank">
+                  <img src="static/carter.jpg" alt="Carter Smith" class="team-member">
+                  <p>Carter Smith<br>Narrative</p>
+              </a>
+              <a href="https://github.com/ferran98campos" target="_blank">
+                  <img src="static/ferran.jpg" alt="Ferran Campos" class="team-member">
+                  <p>Ferran Campos<br>Design, Mechanics</p>
+              </a>
+              <a href="https://github.com/KarlFran66" target="_blank">
+                  <img src="static/karl.png" alt="Karl Zhang" class="team-member">
+                  <p>Karl Zhang<br>Mechanics</p>
+              </a>
+              <a href="https://github.com/malinjam" target="_blank">
+                  <img src="static/malin.jpg" alt="Malin Marques" class="team-member">
+                  <p>Malin Marques<br>Design, Mechanics</p>
+              </a>
+              <a href="https://github.com/skvarre" target="_blank">
+                  <img src="static/tim.png" alt="Tim Olsen" class="team-member">
+                  <p>Tim Olsen<br>Mechanics</p>
+              </a>
+          </div>
+      </section>
+      
+      <section>
+          <a href="https://github.com/ferran98campos/Good_Morning/releases/tag/Demo-v1.0" target="_blank" class="download-button">Download the demo</a>
+      </section>
+    </div>
+</body>
+</html>
