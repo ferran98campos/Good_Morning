@@ -12,8 +12,9 @@ public class fence : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D player){
-        if(player.GetComponent<PlayerController>().isHoldingWireCutter()){
-            a.Play("fence-animation");
+        if(player.tag == "Player" && player.GetComponent<PlayerController>().isHoldingWireCutter()){
+            a.enabled = true; 
+            a.Play("fence-animation"); 
             Destroy(gameObject, 0.5f);
         };
     }
