@@ -72,6 +72,7 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: space-around;
+			width: 100%;
         }
         .team-member {
             border-radius: 50%;
@@ -109,6 +110,10 @@
             flex-direction: column;
             margin-bottom: 3rem;
         }
+		
+		.team:nth-child(even) {
+            flex-direction: row;
+        }
     </style>
 </head>
 <body>
@@ -141,6 +146,15 @@
             </div>
         </section>
     
+		<section class="team">
+          <div>
+            <h2>Trailer</h2>
+          </div>
+          <div class="team-container">
+				<iframe align="center" src="https://drive.google.com/file/d/1OWyDrbVw8C_0CBTvaUlU16XAq680aWRw/preview" width="640" height="480"></iframe>
+			</div>
+		</section>
+		
         <section class="team">
           <div>
             <h2>Meet the Team</h2>
@@ -168,9 +182,9 @@
               </a>
           </div>
       </section>
-      
+	  
       <section>
-          <a href="https://github.com/ferran98campos/Good_Morning/releases/tag/Demo-v1.2" target="_blank" class="download-button">Download the demo</a>
+          <a href="https://github.com/ferran98campos/Good_Morning/releases/tag/Demo-v1.3" target="_blank" class="download-button">Download the demo</a>
       </section>
     </div>
 </body>
